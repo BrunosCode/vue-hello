@@ -6,7 +6,13 @@ const app = new Vue (
         el: "#root",
         data: {
             message: "Hello World",
-            img: "img/vue.png"
+            imgs: [ "img/vue.png", "img/nuxt.png" ],
+            changingImg: "img/vue.png"
+        },
+        methods: {
+            changeImg: function() {
+                this.changingImg = (this.changingImg === this.imgs[0]) ? this.imgs[1] : this.imgs[0];
+            }
         }
     }
 );
